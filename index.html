@@ -7,7 +7,6 @@
   <meta property="og:url" content="https://www.ouv.sk/assets/img/hero-bg.jpg" />
   <meta property="og:image" content="https://www.ouv.sk/assets/img/hero-bg.jpg" />
 
-
   <title>Oravská Ultra Výzva</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
@@ -17,7 +16,8 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,45 +37,41 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178745688-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178745688-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-178745688-1');
-</script>
-
-
+    gtag('config', 'UA-178745688-1');
+  </script>
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <header id="header" class="header-transparent">
     <div class="container">
-
       <div id="logo" class="pull-left">
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
         <!-- Uncomment below if you prefer to use a text logo -->
         <h1><a href="#hero">Oravská Ultra Výzva</a></h1>
-	</div>
+      </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
           <!--<li><a href="#live">Live</a></li>-->
-          <li class="menu-has-children"><a href="prichody.html">Výsledky</a>
-          <ul>
-            <li><a href="prichody.html#vysledky">2021</a></li>
-            <li><a href="prichody.html#vysledky2020">2020</a></li>
-            <li><a href="prichody.html#vysledky2019">2019</a></li>
-          </ul>
-          </li>  
-          <li><a href="trasa.html">Trasa</a></li>
-          <li><a href="#report">Video</a></li> 
-          <li><a target=”_blank” href="https://www.windy.com/upload/6472305a3cab36be6707ae44">Počasie na trase</a></li>
-                    
+          <li><a href="#trasa">Trasa</a></li>
+          <!-- <li><a target=”_blank” href="https://www.windy.com/upload/6472305a3cab36be6707ae44">Počasie na trase</a></li> -->
+          <li><a href="#video">Video</a></li>
+          <li><a target=”_blank” href="https://medium.com/@lubosgelcinsky/oravská-ultra-výzva-cc41a051b238">Report</a></li>
+          <li class="menu-has-children"><a href="#vysledky2021">Výsledky</a>
+            <ul>
+              <li><a href="#vysledky2021">2021</a></li>
+              <li><a href="#vysledky2020">2020</a></li>
+              <li><a href="#vysledky2019">2019</a></li>
+            </ul>
+          </li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -84,49 +80,44 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      
+
       <script>
         // Set the date we're counting down to
         var countDownDate = new Date("Jun 17, 2023 04:00:00").getTime();
-        
+
         // Update the count down every 1 second
-        var x = setInterval(function() {
-        
+        var x = setInterval(function () {
+
           // Get today's date and time
           var now = new Date().getTime();
-        
+
           // Find the distance between now and the count down date
           var distance = countDownDate - now;
-        
+
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
+
           // Display the result in the element with id="demo"
           document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
-        
+            + minutes + "m " + seconds + "s ";
+
           // If the count down is finished, write some text
           if (distance < 0) {
             clearInterval(x);
             document.getElementById("demo").innerHTML = "Odštartované";
           }
         }, 1000);
-        </script>
- 
+      </script>
+
       <h1>17. jún 2023</h1>
-      <h2><span data-toggle="counter-up">123</span> km &nbsp;I&nbsp; +<span data-toggle="counter-up">5000</span> m</h2>
+      <h2><span data-toggle="counter-up">124</span> km &nbsp;I&nbsp; +<span data-toggle="counter-up">6400</span> m</h2>
       <!--<a href="#live" class="btn-get-started">Live mapa</a>-->
       <p id="demo" style="color: #ffffff; font-size: 25px;"></p>
       <a href="#vysledky" class="btn-get-started">Výsledky 2021</a>
-      
-
-
     </div>
-
-   
   </section><!-- End Hero Section -->
 
   <main id="main">
@@ -148,8 +139,43 @@
     </section>-->
     <!-- End Live Section -->
 
-   <!-- ======= Vysledky Section ======= -->
-   <section id="vysledky">
+    <section id="trasa" class="bg-white">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title" style="color: #d2ac67;">Trasa</h3>
+          <p class="section-description"></p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in"></div>
+            <iframe src="https://iframe.tracedetrail.fr/en/trace/output2/221488/osm/3182878664" scrolling="no"
+              marginheight="0" marginwidth="0" frameborder="0" width="100%" height="800" webkitallowfullscreen
+              mozallowfullscreen allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Video Section ======= -->
+    <section id="video">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h3 class="section-title" style="color: #d2ac67;">Video z OUV 2020</h3>
+          <p class="section-description"></p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
+            <iframe width="100%" height="600px" src="https://www.youtube.com/embed/BDxFP9FqQ9E" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Video Section -->
+
+      <!-- ======= Vysledky Section ======= -->
+  <section id="vysledky2021">
     <div class="container" data-aos="fade-up">
       <div class="section-header">
         <h3 class="section-title" style="color: #d2ac67;">Výsledky 2021</h3>
@@ -157,14 +183,12 @@
       </div>
      
       <div class="row">
-        <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
-          
+        <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">          
           <table class="table">
             <thead>
               <tr>
                 <th scope="col">Meno</th>
-                <th scope="col">Čas</th>
-                
+                <th scope="col">Čas</th>                
               </tr>
             </thead>
             <tbody>
@@ -195,7 +219,7 @@
               <tr>
                 <td>Ján Jankola</td>
                 <th scope="row">24 hod 24 min</th>
-              </tr>              
+              </tr>            
               <tr>
                 <td>Martin Horčík</td>
                 <th scope="row">26 hod 54 min</th>
@@ -214,89 +238,178 @@
               </tr>
             </tbody>
           </table>
-                   
         </div> 
-
-        <div class="mt-5 d-flex justify-content-center w-100" data-aos="zoom-in">
-        <a href="prichody.html#vysledky2020"><button type="button" class="btn btn-secondary">Ostatné ročníky</button></a>
-        </div>
-
       </div>
       </div>
-
-      
-
   </section>
-  <!-- End Vysledky Section -->    
-    
-    
-    <!-- ======= Video Section ======= -->
-    <section id="report">
+  <!-- End Vysledky Section -->   
+
+   <!-- ======= Vysledky Section ======= -->
+   <section id="vysledky2020" class="bg-white mt-5">
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h3 class="section-title" style="color: #d2ac67;">Výsledky 2020</h3>
+         <p class="section-description"></p>
+      </div>
+     
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Meno</th>
+                <th scope="col">Čas</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Patrik Hrotek, Adrian Grunert</td>
+                <th scope="row">22 hod 20 min</th>
+                
+              </tr>
+              <tr>
+                <td>Roman Petrikovič, Peter Zuzic</td>
+                <th scope="row">25 hod 05 min</th>
+               
+              </tr>
+              <tr>
+                <td>Marek Prachar</td>
+                <th scope="row">27 hod 25 min</th>
+
+              </tr>
+
+              <tr>
+                <td>Jozef Bendík, Michal Klinovský</td>
+                <th scope="row">27 hod 50 min</th>
+
+              </tr>
+
+              <tr>
+                <td>Martin Horčík, Tomáš Hutira</td>
+                <th scope="row">DNF</th>
+               
+              </tr>
+            </tbody>
+          </table>                   
+        </div> 
+      </div>
+      </div>
+  </section>
+  <!-- End Vysledky Section --> 
+   <!-- ======= Vysledky Section ======= -->
+   <section id="vysledky2019">
+    <div class="container" data-aos="fade-up">
+      <div class="section-header">
+        <h3 class="section-title" style="color: #d2ac67;">Výsledky 2019</h3>
+         <p class="section-description"></p>
+      </div>
+     
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
+          
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Meno</th>
+                <th scope="col">Čas</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ľuboš Gelčinský, Rastislav Vajduľák, Tomáš Šubjak, Jozef Žuffa</td>
+                <th scope="row">25 hod 25 min</th>
+                
+              </tr>
+              
+            </tbody>
+          </table>                   
+        </div> 
+      </div>
+      </div>
+  </section>
+  <!-- End Vysledky Section --> 
+
+    <!-- ======= Vysledky Section ======= -->
+    <!-- <section id="vysledky">
       <div class="container" data-aos="fade-up">
         <div class="section-header">
-          <h3 class="section-title" style="color: #d2ac67;">Video z OUV 2020</h3>
-           <p class="section-description"></p>
+          <h3 class="section-title" style="color: #d2ac67;">Výsledky 2021</h3>
+          <p class="section-description"></p>
         </div>
-       
+
         <div class="row">
           <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
-            <iframe width="100%" height="600px" src="https://www.youtube.com/embed/BDxFP9FqQ9E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div> 
-        </div>
-        </div>
 
-    </section><!-- End Video Section -->
-    
-    <!-- ======= Facts Section ======= -->
-    <section id="facts">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h3 class="section-title" style="color: #d2ac67;">Profil</h3>
-           <p class="section-description"></p>
-        </div>
-        <div class="row counters">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Meno</th>
+                  <th scope="col">Čas</th>
 
-          <div class="col-lg-6 col-6 text-center">
-            <span data-toggle="counter-up">123</span>
-            <p>kilometrov</p>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Marián Priadka</td>
+                  <th scope="row">16 hod 31 min</th>
+                </tr>
+                <tr>
+                  <td>Patrik Hrotek</td>
+                  <th scope="row">19 hod 13 min</th>
+                </tr>
+                <tr>
+                  <td>Peter Matej</td>
+                  <th scope="row">20 hod 14 min</th>
+                </tr>
+                <tr>
+                  <td>Bohumil Uhrín</td>
+                  <th scope="row">21 hod 25 min</th>
+                </tr>
+                <tr>
+                  <td>Lenka Sentkerestiová, Roman Petrikovič, Michal Kačmár</td>
+                  <th scope="row">22 hod 30 min</th>
+                </tr>
+                <tr>
+                  <td>Tomáš Honegr</td>
+                  <th scope="row">24 hod 00 min</th>
+                </tr>
+                <tr>
+                  <td>Ján Jankola</td>
+                  <th scope="row">24 hod 24 min</th>
+                </tr>
+                <tr>
+                  <td>Martin Horčík</td>
+                  <th scope="row">26 hod 54 min</th>
+                </tr>
+                <tr>
+                  <td>Jaroslav Janíček</td>
+                  <th scope="row">27 hod 06 min</th>
+                </tr>
+                <tr>
+                  <td>Radka Paulinyová, Braňo Zigo</td>
+                  <th scope="row">29 hod 36 min</th>
+                </tr>
+                <tr>
+                  <td>Tomáš Dovala, Slavomír Praj</td>
+                  <th scope="row">DNF</th>
+                </tr>
+              </tbody>
+            </table>
+
           </div>
 
-          <div class="col-lg-6 col-6 text-center">
-            <span data-toggle="counter-up">5000</span>
-            <p>výškových metrov</p>
+          <div class="mt-5 d-flex justify-content-center w-100" data-aos="zoom-in">
+            <a href="prichody.html#vysledky2020"><button type="button" class="btn btn-secondary">Ostatné
+                ročníky</button></a>
           </div>
 
         </div>
+      </div>
+    </section> -->
 
-        <div class="row">
-          <div class="col-lg-12 col-md-12" data-aos="zoom-in">
-            <img class="w-100" src="assets/img/profil.png" alt="">
-          </div> 
-        </div>
-        </div>
-
-        <div class="mt-5 d-flex justify-content-center w-100" data-aos="zoom-in">
-          <a href="trat.html"><button type="button" class="btn btn-secondary">Viac o trase</button></a>
-        </div>
-
-    </section><!-- End Facts Section -->
-
-    <!-- ======= Weather Section ======= -->
-    <!-- <section id="pocasie">
-      <div class="container" data-aos="fade-up">
-        <div class="section-header">
-          <h3 class="section-title" style="color: #d2ac67;">Počasie</h3>
-          <p class="section-description">Po kliknutí na logo sa zobrazí počasie aj s mapkou trasy.</p>
-        </div>
-        <div class="row">
-          <div class="col-lg-12 col-md-12 text-center" data-aos="zoom-in">
-           <a href="https://www.windy.com/upload/5f6b1ae755a5670011999f9e?radar,49.280,19.566,11" target="_blank"><img class="w-50" src="assets/img/windy.png"></a>
-          </div> 
-        </div>
-
-      </div> -->
-    <!-- </section>End Weather Section -->
-      
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
