@@ -186,3 +186,154 @@
   });
 
 })(jQuery);
+
+document.addEventListener('DOMContentLoaded', function () {
+  var translations = {
+    sk: {
+      'hero.date': '13. jún 2026',
+      'nav.route': 'Trasa',
+      'nav.video': 'Video',
+      'nav.reports': 'Reporty',
+      'nav.results': 'Výsledky',
+      'nav.contact': 'Kontakt',
+      'section.routeTitle': 'Trasa',
+      'section.videoTitle': 'Video z OUV 2020',
+      'section.galleryTitle': 'Galéria',
+      'section.galleryDescription': 'Fotky z trasy Oravskej Ultra Výzvy',
+      'section.results2025': 'Výsledky 2025',
+      'section.results2024': 'Výsledky 2024',
+      'section.results2023': 'Výsledky 2023',
+      'section.results2021': 'Výsledky 2021',
+      'section.results2020': 'Výsledky 2020',
+      'section.results2019': 'Výsledky 2019',
+      'table.name': 'Meno',
+      'table.time': 'Čas',
+      'section.contactTitle': 'Kontakt',
+      'section.contactDescription': 'Napíšte nám na <a href="mailto:contact@ouv.sk">contact@ouv.sk</a>',
+      'countdown.started': 'Odštartované'
+    },
+    en: {
+      'hero.date': '13 June 2026',
+      'nav.route': 'Route',
+      'nav.video': 'Video',
+      'nav.reports': 'Reports',
+      'nav.results': 'Results',
+      'nav.contact': 'Contact',
+      'section.routeTitle': 'Route',
+      'section.videoTitle': 'OUV 2020 Video',
+      'section.galleryTitle': 'Gallery',
+      'section.galleryDescription': 'Photos from the Oravská Ultra Výzva course',
+      'section.results2025': 'Results 2025',
+      'section.results2024': 'Results 2024',
+      'section.results2023': 'Results 2023',
+      'section.results2021': 'Results 2021',
+      'section.results2020': 'Results 2020',
+      'section.results2019': 'Results 2019',
+      'table.name': 'Name',
+      'table.time': 'Time',
+      'section.contactTitle': 'Contact',
+      'section.contactDescription': 'Email us at <a href="mailto:contact@ouv.sk">contact@ouv.sk</a>',
+      'countdown.started': 'Started'
+    }
+  };
+
+  var storageKey = 'ouv-preferred-language';
+  var defaultLang = 'sk';
+  var currentLang = localStorage.getItem(storageKey) || defaultLang;
+  var countdownElement = document.getElementById('demo');
+  var countdownDate = new Date('Jun 13, 2026 04:00:00').getTime();
+  var countdownTimer = null;
+  var countdownFinished = false;
+
+  function getTranslation(lang, key) {
+    if (translations[lang] && translations[lang][key] !== undefined) {
+      return translations[lang][key];
+    }
+    return translations[defaultLang][key] || '';
+  }
+
+  function updateTranslatableContent() {
+    document.documentElement.lang = currentLang;
+    var elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (!key) {
+        return;
+      }
+      var value = getTranslation(currentLang, key);
+      if (value === '') {
+        return;
+      }
+      if (el.getAttribute('data-i18n-html') === 'true') {
+        el.innerHTML = value;
+      } else {
+        el.textContent = value;
+      }
+    });
+
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
+    });
+  }
+
+  function setLanguage(lang) {
+    if (!translations[lang]) {
+      lang = defaultLang;
+    }
+    currentLang = lang;
+    localStorage.setItem(storageKey, currentLang);
+    updateTranslatableContent();
+    if (countdownFinished && countdownElement) {
+      countdownElement.textContent = getTranslation(currentLang, 'countdown.started');
+    }
+  }
+
+  function updateCountdown() {
+    if (!countdownElement) {
+      return;
+    }
+
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+
+    if (distance <= 0) {
+      countdownFinished = true;
+      countdownElement.textContent = getTranslation(currentLang, 'countdown.started');
+      if (countdownTimer) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+      }
+      return;
+    }
+
+    countdownFinished = false;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    countdownElement.textContent = days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's';
+  }
+
+  function startCountdown() {
+    if (!countdownElement) {
+      return;
+    }
+    updateCountdown();
+    countdownTimer = setInterval(updateCountdown, 1000);
+  }
+
+  document.addEventListener('click', function (event) {
+    var button = event.target.closest('.lang-btn');
+    if (!button) {
+      return;
+    }
+    var lang = button.getAttribute('data-lang');
+    if (lang) {
+      event.preventDefault();
+      setLanguage(lang);
+    }
+  });
+
+  setLanguage(currentLang);
+  startCountdown();
+});
