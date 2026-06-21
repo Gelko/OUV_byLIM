@@ -190,7 +190,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   var translations = {
     sk: {
-      'hero.date': '13. jún 2026',
+      'hero.date': '12. jún 2027',
       'nav.route': 'Trasa',
       'nav.video': 'Video',
       'nav.reports': 'Reporty',
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
       'countdown.started': 'Odštartované'
     },
     en: {
-      'hero.date': '13 June 2026',
+      'hero.date': '12 June 2027',
       'nav.route': 'Route',
       'nav.video': 'Video',
       'nav.reports': 'Reports',
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var defaultLang = 'sk';
   var currentLang = localStorage.getItem(storageKey) || defaultLang;
   var countdownElement = document.getElementById('demo');
-  var countdownDate = new Date('Jun 13, 2026 04:00:00').getTime();
+  var countdownDate = new Date('Jun 12, 2027 04:00:00').getTime();
   var countdownTimer = null;
   var countdownFinished = false;
 
